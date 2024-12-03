@@ -12,7 +12,7 @@ using namespace std;
 #define DELAY_CONST 100000
 int delay = 100000;
 
-Player *myPlayer; // Gloabla pointer meant to instantiate a player object on heap
+Player *myPlayer; // Global pointer meant to instantiate a player object on heap
 GameMechs *myGM; 
 Food *myFood;
 

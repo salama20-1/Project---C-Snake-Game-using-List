@@ -1,48 +1,48 @@
-#include "Food.h"
 #include "MacUILib.h"
 #include "string.h"
 #include <stdlib.h>
 #include <time.h>
+#include "Food.h"
 
-// Default constructor to initialize food position and symbol
+// default constructor to initialize food position and symbol
 Food::Food()
 {
+    foodPos.symbol = '\0'; // No symbol initially assigned
     foodPos.pos->x = 0;
     foodPos.pos->y = 0;
-    foodPos.symbol = '\0';  // No symbol initially assigned
 }
 
-// Destructor does nothing as no dynamic memory allocation is used
+// destructor does nothing as no dynamic memory allocation is used
 Food::~Food()
 {
-    // No cleanup required as no heap memory is allocated
+    // no cleanup required as no heap memory is allocated
 }
 
-// Generates a valid food position on the board, avoiding the player
+// generates a valid food position on the board, avoiding the player
 void Food::generateFood(objPosArrayList* blockOff)
 {
-    const char foodSymbol = 'X';  // Food symbol to be placed
-    bool foodPlaced = false;      // Flag to check if the food is successfully placed
+    const char foodSymbol = 'X';  // food symbol to be placed
+    bool foodPlaced = false;      // flag to check if the food is successfully placed
 
-    srand(time(NULL));  // Initialize the random seed
+    srand(time(NULL));  // initialize the random seed
 
     while (!foodPlaced) {
-        // Generate random coordinates within the grid
+        // generate random coordinates within the grid
         int randX = rand() % 29 + 1;
         int randY = rand() % 14 + 1;
 
         foodPos.pos->x = randX;
         foodPos.pos->y = randY;
 
-        // Check for overlap with any player block
+        // check for overlap with any player block
         if (!isOverlapWithPlayer(blockOff)) {
-            foodPos.symbol = foodSymbol;  // Assign food symbol if no overlap
-            foodPlaced = true;  // Successfully placed food
+            foodPos.symbol = foodSymbol;  // assign food symbol if no overlap
+            foodPlaced = true;  // successfully placed food
         }
     }
 }
 
-// Checks if the generated food position overlaps with any player's position
+// checks if the generated food position overlaps with any player's position
 bool Food::isOverlapWithPlayer(objPosArrayList* blockOff)
 {
     int blockCount = blockOff->getSize();
@@ -50,14 +50,14 @@ bool Food::isOverlapWithPlayer(objPosArrayList* blockOff)
     for (int i = 0; i < blockCount; ++i) {
         objPos currentBlock = blockOff->getElement(i);
         if (currentBlock.pos->x == foodPos.pos->x && currentBlock.pos->y == foodPos.pos->y) {
-            return true;  // Overlap detected
+            return true;  // overlap detected
         }
     }
 
-    return false;  // No overlap
+    return false;  // no overlap
 }
 
-// Returns the position of the food
+// returns the position of the food
 objPos Food::getFoodPos() const
 {
     return foodPos;

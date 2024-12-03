@@ -14,7 +14,8 @@ class Food
     // You will include more data members and member functions to complete your design.
 
     public:
-        enum Dir {UP, DOWN, LEFT, RIGHT, STOP};  // This is the direction state
+        // Direction state
+        enum Dir {UP, DOWN, LEFT, RIGHT, STOP};  
 
         Food();
         ~Food();
@@ -22,13 +23,12 @@ class Food
         void generateFood(objPosArrayList* blockOff);
         objPos getFoodPos() const; // Upgrade this in iteration 3. 
         
-        // Check if food position overlaps with any player's position
-        bool isOverlapWithPlayer(objPosArrayList* blockOff);  // Add this function prototype
+        // does food position overlap with player position?
+        bool isOverlapWithPlayer(objPosArrayList* blockOff);  // add this function prototype
 
     private:
         objPos foodPos; // Upgrade this in iteration 3.
 
-        // Need a reference to the Main Game Mechanisms
 };
 
 #endif
