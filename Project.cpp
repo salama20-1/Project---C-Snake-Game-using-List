@@ -157,6 +157,7 @@ void DrawScreen(void)
 
 
     MacUILib_printf("\nCURRENT SCORE: %d\n", myGM->getScore());
+    MacUILib_printf("FOOD POSITION: [%d, %d]\n", foodPos.pos->x, foodPos.pos->y);
 
     
    
