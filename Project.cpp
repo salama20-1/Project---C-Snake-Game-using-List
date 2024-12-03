@@ -69,7 +69,6 @@ void RunLogic(void)
 
     myPlayer -> updatePlayerDir();
     myPlayer -> movePlayer();
-    myPlayer -> updatePlayerSpeed(delay);
     myGM -> clearInput();
     //add movePlayer
     //add speed control
