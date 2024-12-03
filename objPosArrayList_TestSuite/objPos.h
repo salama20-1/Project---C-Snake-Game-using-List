@@ -1,7 +1,7 @@
 #ifndef OBJPOS_H
 #define OBJPOS_H
 
-// Not really a C++ thing
+// Not really a C++ thing 
 typedef struct 
 {
     int x;
@@ -28,6 +28,10 @@ class objPos
         char getSymbolIfPosEqual(const objPos* refPos) const;
         
         bool isPosEqual(const objPos* refPos) const;
+
+        objPos(const objPos &copy);
+        objPos& operator=(const objPos &copy);
+        ~objPos();
 };
 
 #endif

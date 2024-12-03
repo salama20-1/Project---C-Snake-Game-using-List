@@ -6,8 +6,13 @@
 
 #include "objPos.h"
 #include "objPosArrayList.h"
+#include "Food.h" // for debugging key of random food
 
 using namespace std;
+
+
+class Food;  // forward declaration 
+
 
 class GameMechs
 {
@@ -20,7 +25,6 @@ class GameMechs
         int boardSizeX;
         int boardSizeY;
 
-        objPos food;
 
     public:
         GameMechs();
@@ -32,7 +36,7 @@ class GameMechs
         bool getLoseFlagStatus() const;
         void setLoseFlag();
 
-        char getInput() const;
+        char getInput();
         void setInput(char this_input);
         void clearInput();
 
@@ -40,9 +44,12 @@ class GameMechs
         int getBoardSizeY() const;
         
         int getScore() const;
-        void incrementScore();
+        void incrementScore(int value = 1);
         
         // More methods should be added here
+        // myFood and blockOff passed for debugging key of random food
+        void collectAsyncInput(Food* myFood, objPosArrayList* blockOff); 
+        
 };
 
 #endif

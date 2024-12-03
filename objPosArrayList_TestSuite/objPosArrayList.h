@@ -2,7 +2,7 @@
 #define OBJPOS_ARRAYLIST_H
 
 #define ARRAY_MAX_CAP 200
-
+ 
 #include "objPos.h"
 
 class objPosArrayList
@@ -25,6 +25,13 @@ class objPosArrayList
         objPos getHeadElement() const;
         objPos getTailElement() const;
         objPos getElement(int index) const;
+
+        objPosArrayList(const objPosArrayList &copy);
+        objPosArrayList& operator=(const objPosArrayList &copy);
 };
 
 #endif
+
+
+
+ 

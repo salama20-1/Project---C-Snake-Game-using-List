@@ -1,5 +1,5 @@
 #include "objPos.h"
-
+//change for push
 objPos::objPos()
 {
     pos = new Pos;
@@ -19,8 +19,25 @@ objPos::objPos(int xPos, int yPos, char sym)
 // Respect the rule of six / minimum four
 // [TODO] Implement the missing special member functions to meet the minimum four rule
 
+objPos::objPos(const objPos &copy){
+    pos = new Pos;
+    symbol = copy.symbol;
+    pos->x = copy.pos->x;                           // Copy Constructor
+    pos->y = copy.pos->y;    
+}
 
+objPos& objPos:: operator=(const objPos &copy){
+    if(this != &copy){
+        this-> pos->x = copy.pos->x;
+        this-> pos->y = copy.pos->y;            // Copy Assignment Operator
+        this->symbol = copy.symbol;
+    }
+    return *this;
+}
 
+objPos::~objPos(){
+    delete pos;
+}
 
 void objPos::setObjPos(objPos o)
 {
