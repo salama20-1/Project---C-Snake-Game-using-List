@@ -128,31 +128,6 @@ void Player::movePlayer()
     checkSelfCollision();
 }
 
-void Player::updatePlayerSpeed(int &delay)
-{
-    char input = mainGameMechsRef->getInput();
-    if (input!=0)
-    {
-        switch(input)
-        {
-            case '-':
-                delay += 10000;
-                if (delay >=500000)
-                {
-                    delay = 500000;
-                }
-                break;
-            case '+':
-            case '=':
-                delay -= 10000;
-                if (delay<= 10000)
-                {
-                    delay = 10000;
-                }
-                break;
-        }
-    }
-}
 
 // More methods to be added
 char Player::getDirection()

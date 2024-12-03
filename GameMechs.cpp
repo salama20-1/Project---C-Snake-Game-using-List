@@ -51,22 +51,7 @@ void GameMechs:: collectAsyncInput(Food* myFood, objPosArrayList* blockOff)
         setExitTrue();
     }
 
-    /* //debug score case
-    if(input == 'i')
-    {
-        incrementScore();
-    }
-    //debug lose flag
-    if(input == 'l')
-    {
-        setLoseFlag();
-    }*/
-
-    /* //debug clear and new food
-    if (input == 'c')
-    {
-        myFood-> generateFood(blockOff);
-    }  */
+    
 } 
 char GameMechs::getInput()
 {
@@ -105,7 +90,7 @@ void GameMechs::setLoseFlag()
     loseFlag = true;
     
     if (getLoseFlagStatus() == true){
-        MacUILib_printf ("\n*****Game over: You Lose*****\n");
+        MacUILib_printf ("\nGAME OVER!!\n");
         MacUILib_Delay(1000000);
     }
 }
