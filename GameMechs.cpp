@@ -46,7 +46,7 @@ void GameMechs:: collectAsyncInput(Food* myFood, objPosArrayList* blockOff)
 
         input = MacUILib_getChar();
     }
-    if (input == ' ') 
+    if (input == 27) 
     { // exit
         setExitTrue();
     }
@@ -82,6 +82,7 @@ int GameMechs::getBoardSizeY() const
 void GameMechs::setExitTrue()
 {
     MacUILib_Delay(1000000);
+    MacUILib_printf("You quit the game! Goodbye. :(");
     exitFlag = true;
 }
 
