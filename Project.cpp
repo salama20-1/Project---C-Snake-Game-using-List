@@ -84,7 +84,6 @@ void DrawScreen(void)
     objPosArrayList* playerPos = myPlayer -> getPlayerPos(); // goes into copy assignement operator
     int playerSize = playerPos->getSize();
     objPos foodPos = myFood -> getFoodPos();
-    //MacUILib_printf("Player [x, y, sym] = [%d, %d, %c, ]\n", playerPos.pos->x, playerPos.pos->y, playerPos.symbol);
 
     int j, i, flag;
 
@@ -158,8 +157,7 @@ void DrawScreen(void)
 
     MacUILib_printf("\nCURRENT SCORE: %d\n", myGM->getScore());
     MacUILib_printf("FOOD POSITION: [%d, %d]\n", foodPos.pos->x, foodPos.pos->y);
-
-    
+    MacUILib_printf("Press ESC to exit the game.");
    
 }
 

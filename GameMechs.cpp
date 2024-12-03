@@ -82,7 +82,6 @@ int GameMechs::getBoardSizeY() const
 void GameMechs::setExitTrue()
 {
     MacUILib_Delay(1000000);
-    MacUILib_printf("You quit the game! Goodbye. :(");
     exitFlag = true;
 }
 
