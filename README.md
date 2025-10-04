@@ -1,15 +1,28 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/mLqiHWLE)
-# COE2SH4 - Course Project Template
-Course Project
-
-You must watch the briefing video and read through the manual to engage in the development activities.
+🚀 How to Run
+Go to this repository and download or clone it:
+git clone https://github.com/salama20-1/Project---C-Snake-Game-using-List.git
 
 
-Section: [L08]
+Build the project using make:
 
-Team Information
-Member 1 MacID: [siddin25]
-Member 1 StudentID: [400518616]
+make
 
-Member 2 MacID: [salama20]
-Member 2 StudentID: [400511917]
+
+Run the game:
+
+./project
+
+
+Controls:
+
+W – Move Up
+
+A – Move Left
+
+S – Move Down
+
+D – Move Right
+
+Q – Quit
+
+🎮 Enjoy the game!
